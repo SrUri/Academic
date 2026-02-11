@@ -1,0 +1,12 @@
+id_mem: 65553
+ind: 0
+id_mem: 65553
+ind: 1
+id_mem: 65553
+ind: 2
+id_mem: 65553
+ind: 3
+i: 1
+i: 2
+i: 0
+i: 3
