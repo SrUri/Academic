@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cat.urv.deim.MyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-23T15:58:36" hostname="MacBookMBPdeUri.lan" time="0.194">
+  <properties/>
+  <testcase name="llegirFitxerTest()" classname="cat.urv.deim.MyTest" time="0.123"/>
+  <testcase name="test2()" classname="cat.urv.deim.MyTest" time="0.038"/>
+  <testcase name="test3()" classname="cat.urv.deim.MyTest" time="0.027"/>
+  <system-out><![CDATA[Error de format en la linia: 4388,NULL,Ancient Civilizations: Rome and Pompeii
+Error de format en la linia: 4794,NULL,Ancient Civilizations: Land of the Pharaohs
+Error de format en la linia: 7241,NULL,Ancient Civilizations: Athens and Greece
+Error de format en la linia: 10782,NULL,Roti Kapada Aur Makaan
+Error de format en la linia: 15918,NULL,Hote Hote Pyaar Ho Gaya
+Error de format en la linia: 16678,NULL,Jimmy Hollywood
+Error de format en la linia: 17667,NULL,Eros Dance Dhamaka
+Error de format en la linia: 4388,NULL,Ancient Civilizations: Rome and Pompeii
+Error de format en la linia: 4794,NULL,Ancient Civilizations: Land of the Pharaohs
+Error de format en la linia: 7241,NULL,Ancient Civilizations: Athens and Greece
+Error de format en la linia: 10782,NULL,Roti Kapada Aur Makaan
+Error de format en la linia: 15918,NULL,Hote Hote Pyaar Ho Gaya
+Error de format en la linia: 16678,NULL,Jimmy Hollywood
+Error de format en la linia: 17667,NULL,Eros Dance Dhamaka
+Error de format en la linia: 4388,NULL,Ancient Civilizations: Rome and Pompeii
+Error de format en la linia: 4794,NULL,Ancient Civilizations: Land of the Pharaohs
+Error de format en la linia: 7241,NULL,Ancient Civilizations: Athens and Greece
+Error de format en la linia: 10782,NULL,Roti Kapada Aur Makaan
+Error de format en la linia: 15918,NULL,Hote Hote Pyaar Ho Gaya
+Error de format en la linia: 16678,NULL,Jimmy Hollywood
+Error de format en la linia: 17667,NULL,Eros Dance Dhamaka
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
