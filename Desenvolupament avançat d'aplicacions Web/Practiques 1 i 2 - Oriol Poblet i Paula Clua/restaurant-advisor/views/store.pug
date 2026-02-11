@@ -1,0 +1,60 @@
+extends layout
+include mixins/_reviewForm
+include mixins/_review
+
+block content
+  .container
+    .mb-3.card
+      img.card-img-top(src=`/uploads/${store.photo || 'store.png'}`)
+      .card-body
+        h5.fs-0 #{store.name}
+        p.mb-0= store.address
+
+    // Contenedor para el mapa
+    #map(style="height: 400px; width: 100%; margin-top: 20px;")  
+
+    .no-gutters.row
+      .pr-lg-2.col-lg-12
+        .card
+          .card-body
+            p= store.description
+            if store.tags
+              each tag in store.tags
+                a.badge.bg-light.text-primary(href=`/tags/${tag}`) #{tag}
+            if user
+              .no-gutters.row
+                .pt-3.lg-2.col-lg-12
+                  .card
+                    .card-body
+                      +reviewForm(store)
+
+            if store.reviews
+              each r in store.reviews
+                .no-gutters.row
+                  .pt-3.lg-2.col-lg-12
+                    .card
+                      .card-body
+                        +review(r)
+
+block scripts
+  // Incluir los estilos y scripts de Leaflet desde el CDN
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css")
+  script(src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js")
+
+  // Inicialización del mapa en la ubicación del restaurante
+  script.
+    // Crear el mapa y centrarlo en las coordenadas del restaurante
+    var map = L.map('map').setView([!{store.location.latitud}, !{store.location.longitud}], 15);
+
+    // Añadir la capa de mapa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Agregar un marcador en la ubicación del restaurante con un popup que muestra el nombre y la calificación
+    L.marker([!{store.location.latitud}, !{store.location.longitud}])
+      .addTo(map)
+      // Añadimos la nota y el nombre del restaurante al popup
+      .bindPopup(`<strong>!{store.name}</strong><br>Rating: !{store.averageRating ? store.averageRating + '/5' : 'No ratings yet'}`)
+      .openPopup();
