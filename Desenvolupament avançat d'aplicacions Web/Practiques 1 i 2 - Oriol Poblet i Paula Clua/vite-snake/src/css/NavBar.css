@@ -1,0 +1,43 @@
+/* src/css/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #33333367;
+    color: white;
+    width: calc(100% - 40px); /* Ajusta el ancho para incluir el margen derecho */
+    height: 60px; /* Ajusta la altura según sea necesario */
+    position: fixed; /* Fija la navbar en la parte superior */
+    top: 0;
+    left: 0;
+    margin-right: 20px; /* Añade un margen a la derecha de la navbar */
+    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+}
+
+.navbar-logo img {
+    height: 80px;
+    margin-right: 20px; /* Añade un margen a la derecha del logo */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-button:hover {
+    background-color: #777;
+}
+
+.App {
+    padding-top: 60px; /* Añade un relleno superior para evitar que el contenido quede oculto detrás de la navbar */
+}

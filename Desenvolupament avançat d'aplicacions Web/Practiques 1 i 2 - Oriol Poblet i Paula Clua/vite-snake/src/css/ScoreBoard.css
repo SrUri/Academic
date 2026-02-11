@@ -1,0 +1,102 @@
+.scoreboard {
+    padding: 20px;
+    background: linear-gradient(135deg, #1c1f26, #3a3f4b);
+    border-radius: 15px;
+    max-width: 650px;
+    margin: 30px auto;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.scoreboard h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #f9d342;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+}
+
+/* Estilo del podio */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.circle.gold {
+    background: radial-gradient(circle, #ffd700, #e6ac00);
+    border: 4px solid gold;
+}
+
+.circle.silver {
+    background: radial-gradient(circle, #c0c0c0, #9e9e9e);
+    border: 4px solid silver;
+}
+
+.circle.bronze {
+    background: radial-gradient(circle, #cd7f32, #a15c1c);
+    border: 4px solid #cd7f32;
+}
+
+.circle .rank {
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.circle .player-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.circle .points {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Lista de jugadores del 4 al 10 */
+.other-scores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.other-scores th,
+.other-scores td {
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.other-scores th {
+    background: rgba(0, 0, 0, 0.6);
+    color: #f1c40f;
+    text-transform: uppercase;
+}
+
+.other-scores tbody tr {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.other-scores tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}

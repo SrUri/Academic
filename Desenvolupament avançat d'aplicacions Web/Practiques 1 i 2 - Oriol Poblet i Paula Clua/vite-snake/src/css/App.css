@@ -1,0 +1,206 @@
+/* src/css/App.css */
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.player1-button {
+    background-color: #217ecf; /* Azul para Player 1 */
+}
+
+.player1-button:hover {
+    background-color: #1a5ea8;
+}
+
+.player2-button {
+    background-color: #4CAF50; /* Verde para Player 2 */
+}
+
+.player2-button:hover {
+    background-color: #45a049;
+}
+
+.playing-as {
+    font-size: 2em;
+    color: #ffffff;
+    font-family: "Bebas Neue", serif; /* Aplicar la fuente Bebas Neue */
+    margin-top: 20px;
+}
+
+/* Tablero */
+.board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, 25px); /* Incrementar tamaño de celdas */
+    grid-template-rows: repeat(10, 25px);
+    gap: 10px; /* Mayor separación entre celdas */
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7); /* Fondo del tablero */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada */
+}
+
+/* Estilo de las celdas */
+.tile {
+    background: rgba(255, 255, 255, 0.2); /* Fondo claro para celdas vacías */
+    border-radius: 12px;
+    position: relative;
+    transition: background 300ms, transform 300ms;
+}
+
+.tile.snake-green {
+    background: linear-gradient(to right, #3c9d39, #6bc46e); /* Verde más brillante */
+    box-shadow: inset 0 0 25px rgba(0, 255, 0, 0.8);
+}
+
+.tile.snake-blue {
+    background: linear-gradient(to right, #217ecf, #5fa9f3); /* Azul más vibrante */
+    box-shadow: inset 0 0 25px rgba(0, 0, 255, 0.8);
+}
+
+.tile.food {
+    background: radial-gradient(circle, #ff4444, #ff7878); /* Rojo brillante */
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.9); /* Resaltar la comida */
+}
+
+/* Animaciones para las celdas */
+.tile.pressed {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.game-over {
+    font-size: 2em; /* Texto más grande */
+    color: #ff5555; /* Rojo más vibrante */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5em;
+}
+
+.you-win {
+    font-size: 4em;
+    color: #6bc46e; /* Verde más llamativo */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5em;
+}
+
+.end-message {
+    margin-top: 0.0em; /* Reducir margen superior */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre texto y botón */
+    align-items: center;
+    justify-content: center;
+}
+
+.end-message button {
+    margin-top: 0; /* Eliminar margen extra */
+    padding: 0.8em 1.5em; /* Ajustar tamaño del botón */
+    font-size: 1.1em;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #444, #222);
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.end-message button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, #555, #333);
+}
+
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contenedor del tablero y del botón */
+.board-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.try-again-container {
+    position: absolute;
+    right: -120px; /* Moverlo hacia la derecha del tablero */
+    top: 50%;
+    transform: translateY(-50%); /* Centrar verticalmente */
+}
+
+.try-again-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4444; /* Rojo */
+    transition: background-color 0.3s ease;
+}
+
+.try-again-container button:hover {
+    background-color: #ff2222; /* Rojo oscuro al pasar el ratón */
+}
+.snake-head {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+}
+/* Contenedor general para la pantalla */
+.name-entry-layout {
+    height: 100vh; /* Toda la pantalla visible */
+    display: flex;
+    flex-direction: column; /* Layout columna */
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/snakebackground.png') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    z-index: 1; /* Asegura que no esté detrás del fondo */
+    position: relative;
+}
+
+/* Fondo oscuro para destacar el formulario */
+.name-entry-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    z-index: 2; /* Asegura que esté visible sobre el fondo */
+}
+
+/* Caja del formulario */
+.name-entry-box {
+    background: rgba(163, 163, 163, 0.8); /* Fondo translúcido */
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+/* Estilos para el logo */
+.logo {
+    display: block;
+    margin: 0 auto 20px auto; /* Centrar el logo y añadir margen inferior */
+    max-width: 200px; /* Ajustar el tamaño máximo del logo */
+}

@@ -1,0 +1,128 @@
+/* General settings */
+body {
+  background: url('./assets/snakebackground.png') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.85); /* Ligera transparencia */
+  color: #fff;
+  font: 100%/1.5 sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* src/css/App.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 4em; /* Texto más grande */
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
+  font-family: "Bebas Neue", serif; /* Aplicar la fuente Bebas Neue */
+}
+
+.play-as {
+  font-size: 2em;
+  color: #ffffff;
+  font-family: "Bebas Neue", serif; /* Aplicar la fuente Bebas Neue */
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 1em 2em; /* Tamaño normal del botón */
+  font-size: 1.2em;
+  border-radius: 12px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.player1-button {
+  background: linear-gradient(to bottom, #4CAF50, #45a049); /* Verde para Player 1 */
+}
+
+.player2-button {
+  background: linear-gradient(to bottom, #217ecf, #1a5ea8); /* Azul para Player 2 */
+}
+
+.playing-as {
+  font-size: 2em;
+  color: #ffffff;
+  font-family: "Bebas Neue", serif; /* Aplicar la fuente Bebas Neue */
+  margin-top: 20px;
+}
+
+
+
+/* Animaciones para las celdas */
+.tile.pressed {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Mensaje de fin del juego */
+.end-message {
+  margin-top: 2.5em;
+  text-align: center;
+}
+
+.game-over {
+  font-size: 4em; /* Texto más grande */
+  color: #ff5555; /* Rojo más vibrante */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.5em;
+}
+
+.you-win {
+  font-size: 4em;
+  color: #6bc46e; /* Verde más llamativo */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.5em;
+}
+
+.end-message button {
+  margin-top: 1em;
+  padding: 1em 2em; /* Botón de reinicio de tamaño estándar */
+  font-size: 1.2em;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #444, #222);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.end-message button:hover {
+  transform: scale(1.15);
+  background: linear-gradient(to bottom, #555, #333);
+}
+
+.snake-head {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+}
+.food {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la manzana se ajuste correctamente a la celda */
+}
