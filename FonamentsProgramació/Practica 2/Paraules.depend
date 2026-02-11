@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1652351886 source:c:\users\playe\onedrive\escritorio\programas\paraules\cjt_paraules.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"string.h"
+	"cjt_paraules.h"
+
+1652282932 c:\users\playe\onedrive\escritorio\programas\paraules\cjt_paraules.h
+	<stdbool.h>
+
+1652286802 source:c:\users\playe\onedrive\escritorio\programas\paraules\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	"cjt_paraules.h"
+
