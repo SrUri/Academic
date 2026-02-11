@@ -1,0 +1,37 @@
+#!/bin/bash
+#PBS -N matmat_distribuito
+#PBS -l select=1:ncpus=8:mpiprocs=8:ompthreads=8
+#PBS -l walltime=00:20:00
+#PBS -q studenti
+#PBS -j oe
+#PBS -o matmat_dist_output.log
+
+module load gcc
+module load openmpi
+
+cd $PBS_O_WORKDIR
+
+mpicc -fopenmp -O3 -DTEST matmatdist.c -o matmatdist -lm
+
+if [ $? -eq 0 ]; then
+    echo ">>> Test validacion N=2 y 4 procesos <<<"
+    mpirun -np 4 ./matmatdist
+
+    for N in 2048 4096 6144; do
+        echo ""
+        echo "--- NP=1 (Grid 1x1) ---"
+        mpirun -np 1 ./matmatdist $N 1 1
+
+        echo "--- NP=2 (Grid 1x2) ---"
+        mpirun -np 2 ./matmatdist $N 1 2
+
+        echo "--- NP=4 (Grid 2x2) ---"
+        mpirun -np 4 ./matmatdist $N 2 2
+
+        echo "--- NP=8 (Grid 2x4) ---"
+        mpirun -np 8 ./matmatdist $N 2 4
+    done
+else
+    echo "Error compilacion"
+    exit 1
+fi

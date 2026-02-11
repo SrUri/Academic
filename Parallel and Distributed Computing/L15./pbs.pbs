@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -N matmat_multithread
+#PBS -l select=1:ncpus=8:ompthreads=8
+#PBS -l walltime=00:10:00
+#PBS -q studenti
+#PBS -j oe
+#PBS -o matmat_output.log
+
+module load gcc
+
+cd $PBS_O_WORKDIR
+
+echo "Compilando"
+gcc -fopenmp -O3 matmatthread.c -o matmatthread -lm
+
+if [ $? -eq 0 ]; then
+    ./matmatthread
+else
+    echo "Error compilacion"
+fi

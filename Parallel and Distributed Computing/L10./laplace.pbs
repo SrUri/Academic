@@ -1,0 +1,21 @@
+#!/bin/bash
+#PBS -N laplace_mpi
+#PBS -l select=1:ncpus=8:mpiprocs=8
+#PBS -l walltime=00:10:00
+#PBS -q studenti
+#PBS -j oe
+#PBS -o laplace_output.log
+
+module load openmpi
+
+cd $PBS_O_WORKDIR
+make clean && make || {echo "ERROR"; exit 1;}
+
+for numprocessos in 1 2 4 8; do
+   echo "======== numprocessos=${numprocessos} ========"
+   if [ "$numprocessos" == "1" ]; then
+        mpirun -numprocessos ${numprocessos} ./laplace_mbi
+    else
+        mpirun -numprocessos ${numprocessos} ./laplace_mbi ${T1}
+    fi
+done
