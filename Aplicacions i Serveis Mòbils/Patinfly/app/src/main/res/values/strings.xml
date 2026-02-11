@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Patinfly</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="bike_list_title">Llistat de bicis</string>
+    <string name="bike_details_title">Detalls bici</string>
+    <string name="available">Disponible</string>
+    <string name="not_available">No disponible</string>
+    <string name="type">Tipo:</string>
+    <string name="battery">Bateria:</string>
+    <string name="distance">Distancia:</string>
+    <string name="view_details">Veure detalls</string>
+    <string name="back">Back</string>
+    <string name="profile">Perfil</string>
+    <string name="id_label">ID:</string>
+    <string name="bike_image_desc">Imagen de la bici</string>
+    <string name="bike_photo_desc">Foto de la bici</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_error">Email o contraseña incorrectos</string>
+    <string name="view_profile">Ver perfil</string>
+    <string name="view_bikes">Ver bicis</string>
+    <string name="logo_desc">Logo Patinfly</string>
+    <string name="splash_subtitle">Explore urban areas on two wheels</string>
+    <string name="profile_picture_desc">Foto de perfil</string>
+    <string name="uuid_label">UUID:</string>
+    <string name="device_id_label">Device ID:</string>
+    <string name="created_label">Created:</string>
+    <string name="last_connection_label">Last Connection:</string>
+</resources>
